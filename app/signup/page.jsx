@@ -1,21 +1,24 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { FiUser, FiMail, FiLock, FiGlobe } from "react-icons/fi";
 
 export default function SignUp() {
-  const [fullName, setFullName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [companyName, setCompanyName] = useState("")
-  const [agreeTerms, setAgreeTerms] = useState(false)
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [subdomain, setSubdomain] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [agreeTerms, setAgreeTerms] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    // Handle sign up logic here
-    console.log({ fullName, email, password, companyName, agreeTerms })
-  }
+    e.preventDefault();
+    // Handle sign-up logic here
+    console.log({ firstName, lastName, companyName, subdomain, email, password, agreeTerms });
+  };
 
   return (
     <div className="container relative flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-4 py-12">
@@ -59,59 +62,121 @@ export default function SignUp() {
         <div className="rounded-lg border-2 border-white/50 dark:border-gray-700/50 bg-[#F8F8F8]/20 dark:bg-gray-800/40 backdrop-blur-xl shadow-sm p-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/30 dark:from-gray-800/10 dark:to-gray-800/30 pointer-events-none"></div>
           <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
+            {/* First Name */}
             <div className="space-y-2">
-              <label htmlFor="fullName" className="text-sm font-medium leading-none">
-                Full Name
+              <label htmlFor="firstName" className="text-sm font-medium leading-none">
+                First Name
               </label>
-              <input
-                id="fullName"
-                placeholder="John Doe"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                required
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
-              />
+              <div className="relative">
+                <FiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  id="firstName"
+                  placeholder="John"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                  className="w-full pl-10 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                />
+              </div>
             </div>
+
+            {/* Last Name */}
             <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium leading-none">
-                Email
+              <label htmlFor="lastName" className="text-sm font-medium leading-none">
+                Last Name
               </label>
-              <input
-                id="email"
-                type="email"
-                placeholder="name@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
-              />
+              <div className="relative">
+                <FiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  id="lastName"
+                  placeholder="Doe"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                  className="w-full pl-10 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                />
+              </div>
             </div>
-            <div className="space-y-2">
-              <label htmlFor="password" className="text-sm font-medium leading-none">
-                Password
-              </label>
-              <input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
-              />
-            </div>
+
+            {/* Company Name */}
             <div className="space-y-2">
               <label htmlFor="companyName" className="text-sm font-medium leading-none">
                 Company Name
               </label>
-              <input
-                id="companyName"
-                placeholder="Acme Inc."
-                value={companyName}
-                onChange={(e) => setCompanyName(e.target.value)}
-                required
-                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
-              />
+              <div className="relative">
+                <FiGlobe className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  id="companyName"
+                  placeholder="Acme Inc."
+                  value={companyName}
+                  onChange={(e) => setCompanyName(e.target.value)}
+                  required
+                  className="w-full pl-10 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                />
+              </div>
             </div>
+
+            {/* Subdomain */}
+            <div className="space-y-2">
+              <label htmlFor="subdomain" className="text-sm font-medium leading-none">
+                Subdomain
+              </label>
+              <div className="flex">
+                <div className="relative flex-grow">
+                  <FiGlobe className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                  <input
+                    id="subdomain"
+                    placeholder="your-company"
+                    value={subdomain}
+                    onChange={(e) => setSubdomain(e.target.value)}
+                    required
+                    className="w-full pl-10 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-l-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                  />
+                </div>
+                <span className="px-3 py-2 border border-l-0 border-gray-300 dark:border-gray-700 rounded-r-md bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+                  .safaridesk.io
+                </span>
+              </div>
+            </div>
+
+            {/* Work Email */}
+            <div className="space-y-2">
+              <label htmlFor="email" className="text-sm font-medium leading-none">
+                Work Email
+              </label>
+              <div className="relative">
+                <FiMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="name@company.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="w-full pl-10 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                />
+              </div>
+            </div>
+
+            {/* Password */}
+            <div className="space-y-2">
+              <label htmlFor="password" className="text-sm font-medium leading-none">
+                Password
+              </label>
+              <div className="relative">
+                <FiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  id="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  className="w-full pl-10 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                />
+              </div>
+            </div>
+
+            {/* Terms and Conditions */}
             <div className="flex items-center space-x-2">
               <input
                 type="checkbox"
@@ -132,6 +197,7 @@ export default function SignUp() {
                 </Link>
               </label>
             </div>
+
             <button
               type="submit"
               className="w-full px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-md font-medium transition-colors"
@@ -148,5 +214,5 @@ export default function SignUp() {
         </div>
       </div>
     </div>
-  )
+  );
 }
