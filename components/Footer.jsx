@@ -104,6 +104,22 @@ export default function Footer() {
                   Careers
                 </a>
               </li>
+              <li>
+                <a
+                  href="/terms"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
+                >
+                  Terms & Conditions
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/privacy"
+                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
+                >
+                  Privacy Policy
+                </a>
+              </li>
             </ul>
           </div>
         </div>
