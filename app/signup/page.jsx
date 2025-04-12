@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FiUser, FiMail, FiLock, FiGlobe } from "react-icons/fi";
+import { FiUser, FiMail, FiGlobe } from "react-icons/fi";
 
 export default function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -11,13 +11,12 @@ export default function SignUp() {
   const [companyName, setCompanyName] = useState("");
   const [subdomain, setSubdomain] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [agreeTerms, setAgreeTerms] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle sign-up logic here
-    console.log({ firstName, lastName, companyName, subdomain, email, password, agreeTerms });
+    console.log({ firstName, lastName, companyName, subdomain, email, agreeTerms });
   };
 
   return (
@@ -44,7 +43,7 @@ export default function SignUp() {
         </svg>
       </div>
 
-      <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">
+      <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[500px]">
         <div className="flex flex-col space-y-2 text-center">
           <div className="mx-auto mb-4">
             <Image
@@ -62,39 +61,42 @@ export default function SignUp() {
         <div className="rounded-lg border-2 border-white/50 dark:border-gray-700/50 bg-[#F8F8F8]/20 dark:bg-gray-800/40 backdrop-blur-xl shadow-sm p-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/30 dark:from-gray-800/10 dark:to-gray-800/30 pointer-events-none"></div>
           <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
-            {/* First Name */}
-            <div className="space-y-2">
-              <label htmlFor="firstName" className="text-sm font-medium leading-none">
-                First Name
-              </label>
-              <div className="relative">
-                <FiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                <input
-                  id="firstName"
-                  placeholder="John"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  required
-                  className="w-full pl-10 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
-                />
+            {/* First Name and Last Name */}
+            <div className="flex gap-4">
+              {/* First Name */}
+              <div className="space-y-2 flex-1">
+                <label htmlFor="firstName" className="text-sm font-medium leading-none">
+                  First Name
+                </label>
+                <div className="relative">
+                  <FiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-500" />
+                  <input
+                    id="firstName"
+                    placeholder="John"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    required
+                    className="w-full pl-10 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* Last Name */}
-            <div className="space-y-2">
-              <label htmlFor="lastName" className="text-sm font-medium leading-none">
-                Last Name
-              </label>
-              <div className="relative">
-                <FiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                <input
-                  id="lastName"
-                  placeholder="Doe"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  required
-                  className="w-full pl-10 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
-                />
+              {/* Last Name */}
+              <div className="space-y-2 flex-1">
+                <label htmlFor="lastName" className="text-sm font-medium leading-none">
+                  Last Name
+                </label>
+                <div className="relative">
+                  <FiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-500" />
+                  <input
+                    id="lastName"
+                    placeholder="Doe"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    required
+                    className="w-full pl-10 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                  />
+                </div>
               </div>
             </div>
 
@@ -104,7 +106,7 @@ export default function SignUp() {
                 Company Name
               </label>
               <div className="relative">
-                <FiGlobe className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <FiGlobe className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-500" />
                 <input
                   id="companyName"
                   placeholder="Acme Inc."
@@ -123,7 +125,7 @@ export default function SignUp() {
               </label>
               <div className="flex">
                 <div className="relative flex-grow">
-                  <FiGlobe className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                  <FiGlobe className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-500" />
                   <input
                     id="subdomain"
                     placeholder="your-company"
@@ -145,31 +147,13 @@ export default function SignUp() {
                 Work Email
               </label>
               <div className="relative">
-                <FiMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <FiMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-500" />
                 <input
                   id="email"
                   type="email"
                   placeholder="name@company.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full pl-10 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
-                />
-              </div>
-            </div>
-
-            {/* Password */}
-            <div className="space-y-2">
-              <label htmlFor="password" className="text-sm font-medium leading-none">
-                Password
-              </label>
-              <div className="relative">
-                <FiLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                <input
-                  id="password"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
                   required
                   className="w-full pl-10 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
                 />
@@ -198,12 +182,20 @@ export default function SignUp() {
               </label>
             </div>
 
-            <button
-              type="submit"
-              className="w-full px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-md font-medium transition-colors"
-            >
-              Create Account
-            </button>
+            {/* Submit Button with Text */}
+            <div className="flex justify-end items-center gap-4">
+              <span className="pr-2 text-lg font-medium text-[#F97316] flex items-center gap-2"
+              style={{ fontFamily: "var(--font-shadows-into-light)" }}>
+                Your new journey begins here {" "}
+                <span className="animate-bounceArrow">→</span>
+              </span>
+              <button
+                type="submit"
+                className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-md font-medium transition-colors"
+              >
+                Create Account
+              </button>
+            </div>
           </form>
         </div>
         <div className="text-center text-sm">
