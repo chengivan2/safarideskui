@@ -185,7 +185,7 @@ export default function SignUp() {
 
             {/* Submit Button with Text */}
             <div className="flex justify-end items-center gap-4">
-              <span className="text-lg lg:text-xl font-medium text-[#F97316] flex items-center gap-2"
+              <span className="text-lg lg:text-2xl font-medium text-[#F97316] flex items-center gap-2"
               style={{ fontFamily: "var(--font-shadows-into-light)" }}>
                 Your safari starts here {" "}
                 <span><FaArrowRightLong /></span>
