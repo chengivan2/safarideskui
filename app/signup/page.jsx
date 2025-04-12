@@ -187,7 +187,7 @@ export default function SignUp() {
             <div className="flex justify-end items-center gap-4">
               <span className="text-lg lg:text-xl font-medium text-[#F97316] flex items-center gap-2"
               style={{ fontFamily: "var(--font-shadows-into-light)" }}>
-                Your new journey begins here {" "}
+                Your safari starts here {" "}
                 <span><FaArrowRightLong /></span>
               </span>
               <button
