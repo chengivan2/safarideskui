@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { FiUser, FiMail, FiGlobe } from "react-icons/fi";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { BsBriefcaseFill } from "react-icons/bs";
 
 export default function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -17,7 +16,14 @@ export default function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle sign-up logic here
-    console.log({ firstName, lastName, companyName, subdomain, email, agreeTerms });
+    console.log({
+      firstName,
+      lastName,
+      companyName,
+      subdomain,
+      email,
+      agreeTerms,
+    });
   };
 
   return (
@@ -40,21 +46,28 @@ export default function SignUp() {
               <path d="M100 200V.5M.5 .5H200" fill="none" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" strokeWidth="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+          <rect
+            width="100%"
+            height="100%"
+            strokeWidth="0"
+            fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
+          />
         </svg>
       </div>
 
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[500px]">
         <div className="flex flex-col space-y-2 text-center">
           <div className="mx-auto mb-4">
-            <Image
+            <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-flPCkOIXvJVd6Dy0EV2pRYx4goKdmY.png"
               alt="SafariDesk Logo"
               width={150}
               height={40}
             />
           </div>
-          <h1 className="text-2xl font-semibold tracking-tight">Create an account</h1>
+          <h1 className="text-2xl font-semibold tracking-tight">
+            Create an account
+          </h1>
           <p className="text-sm text-gray-600 dark:text-gray-400">
             Enter your information to get started with SafariDesk
           </p>
@@ -66,7 +79,10 @@ export default function SignUp() {
             <div className="flex gap-4">
               {/* First Name */}
               <div className="space-y-2 flex-1">
-                <label htmlFor="firstName" className="text-sm font-medium leading-none">
+                <label
+                  htmlFor="firstName"
+                  className="text-sm font-medium leading-none"
+                >
                   First Name
                 </label>
                 <div className="relative">
@@ -84,7 +100,10 @@ export default function SignUp() {
 
               {/* Last Name */}
               <div className="space-y-2 flex-1">
-                <label htmlFor="lastName" className="text-sm font-medium leading-none">
+                <label
+                  htmlFor="lastName"
+                  className="text-sm font-medium leading-none"
+                >
                   Last Name
                 </label>
                 <div className="relative">
@@ -103,11 +122,14 @@ export default function SignUp() {
 
             {/* Company Name */}
             <div className="space-y-2">
-              <label htmlFor="companyName" className="text-sm font-medium leading-none">
+              <label
+                htmlFor="companyName"
+                className="text-sm font-medium leading-none"
+              >
                 Company Name
               </label>
               <div className="relative">
-                <FiGlobe className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-500" />
+                <BsBriefcaseFill className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-500" />
                 <input
                   id="companyName"
                   placeholder="Acme Inc."
@@ -121,7 +143,10 @@ export default function SignUp() {
 
             {/* Subdomain */}
             <div className="space-y-2">
-              <label htmlFor="subdomain" className="text-sm font-medium leading-none">
+              <label
+                htmlFor="subdomain"
+                className="text-sm font-medium leading-none"
+              >
                 Subdomain
               </label>
               <div className="flex">
@@ -144,7 +169,10 @@ export default function SignUp() {
 
             {/* Work Email */}
             <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium leading-none">
+              <label
+                htmlFor="email"
+                className="text-sm font-medium leading-none"
+              >
                 Work Email
               </label>
               <div className="relative">
@@ -171,24 +199,37 @@ export default function SignUp() {
                 required
                 className="h-4 w-4 rounded border-gray-300 text-green-500 focus:ring-green-500"
               />
-              <label htmlFor="terms" className="text-sm font-medium leading-none">
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none"
+              >
                 I agree to the{" "}
-                <Link href="/terms" className="text-green-500 hover:text-green-600">
+                <a
+                  href="/terms"
+                  className="text-green-500 hover:text-green-600"
+                >
                   Terms of Service
-                </Link>{" "}
+                </a>{" "}
                 and{" "}
-                <Link href="/privacy" className="text-green-500 hover:text-green-600">
+                <a
+                  href="/privacy"
+                  className="text-green-500 hover:text-green-600"
+                >
                   Privacy Policy
-                </Link>
+                </a>
               </label>
             </div>
 
             {/* Submit Button with Text */}
             <div className="flex justify-end items-center gap-4">
-              <span className="text-lg lg:text-2xl font-medium text-[#F97316] flex items-center gap-2"
-              style={{ fontFamily: "var(--font-shadows-into-light)" }}>
-                Your safari starts here {" "}
-                <span><FaArrowRightLong /></span>
+              <span
+                className="text-lg lg:text-2xl font-medium text-[#F97316] flex items-center gap-2"
+                style={{ fontFamily: "var(--font-shadows-into-light)" }}
+              >
+                Your safari starts here{" "}
+                <span>
+                  <FaArrowRightLong />
+                </span>
               </span>
               <button
                 type="submit"
@@ -201,9 +242,12 @@ export default function SignUp() {
         </div>
         <div className="text-center text-sm">
           Already have an account?{" "}
-          <Link href="/signin" className="font-medium text-green-500 hover:text-green-600">
+          <a
+            href="/signin"
+            className="font-medium text-green-500 hover:text-green-600"
+          >
             Sign in
-          </Link>
+          </a>
         </div>
       </div>
     </div>

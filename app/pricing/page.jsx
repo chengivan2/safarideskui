@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import PricingToggle from "@/components/PricingToggle"
+import { useState } from "react";
+import Link from "next/link";
+import PricingToggle from "@/components/PricingToggle";
 
 export default function Pricing() {
-  const [isYearly, setIsYearly] = useState(false)
+  const [isYearly, setIsYearly] = useState(false);
 
   const basePlans = [
     {
@@ -13,12 +13,9 @@ export default function Pricing() {
       monthlyPrice: "$10",
       yearlyPrice: "$100",
       priceUnit: "per agent",
-      description: "Perfect for small teams just getting started with customer support.",
-      features: [
-        "3 max domains",
-        "5 max agents",
-        "Unlimited storage",
-      ],
+      description:
+        "Perfect for small teams just getting started with customer support.",
+      features: ["3 max domains", "5 max agents", "Unlimited storage"],
       cta: "Start Your Safari",
       popular: false,
     },
@@ -54,7 +51,7 @@ export default function Pricing() {
       cta: "Contact Sales",
       popular: false,
     },
-  ]
+  ];
 
   return (
     <div className="relative">
@@ -76,21 +73,33 @@ export default function Pricing() {
               <path d="M100 200V.5M.5 .5H200" fill="none" />
             </pattern>
           </defs>
-          <svg x="50%" y="-1" className="overflow-visible fill-green-50 dark:fill-green-900/20">
+          <svg
+            x="50%"
+            y="-1"
+            className="overflow-visible fill-green-50 dark:fill-green-900/20"
+          >
             <path
               d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
               strokeWidth="0"
             />
           </svg>
-          <rect width="100%" height="100%" strokeWidth="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+          <rect
+            width="100%"
+            height="100%"
+            strokeWidth="0"
+            fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
+          />
         </svg>
       </div>
 
       <div className="container mx-auto px-4 py-20">
         <div className="text-center max-w-3xl mx-auto mb-8">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Simple, Transparent Pricing</h1>
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+            Simple, Transparent Pricing
+          </h1>
           <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">
-            Choose the plan that's right for your team. All plans include a 14-day free trial.
+            Choose the plan that's right for your team. All plans include a
+            14-day free trial.
           </p>
         </div>
 
@@ -120,7 +129,9 @@ export default function Pricing() {
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/20 dark:from-gray-800/5 dark:to-gray-800/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <h3 className="text-2xl font-bold">{plan.name}</h3>
                 <div className="mt-4 flex items-baseline">
-                  <span className="text-4xl font-extrabold">{isYearly ? plan.yearlyPrice : plan.monthlyPrice}</span>
+                  <span className="text-4xl font-extrabold">
+                    {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+                  </span>
                   <span className="ml-1 text-xl text-gray-600 dark:text-gray-400">
                     {plan.priceUnit}/{isYearly ? "year" : "month"}
                   </span>
@@ -133,7 +144,9 @@ export default function Pricing() {
                     per agent annually
                   </div>
                 )}
-                <p className="mt-4 text-gray-600 dark:text-gray-400">{plan.description}</p>
+                <p className="mt-4 text-gray-600 dark:text-gray-400">
+                  {plan.description}
+                </p>
                 <ul className="mt-6 space-y-3 flex-grow">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
@@ -157,7 +170,7 @@ export default function Pricing() {
                   ))}
                 </ul>
                 <div className="mt-8">
-                  <Link href={plan.name === "Enterprise" ? "/contact" : "/signup"}>
+                  <a href={plan.name === "Enterprise" ? "/contact" : "/signup"}>
                     <button
                       className={`cursor-pointer w-full px-6 py-3 rounded-md font-medium transition-colors ${
                         plan.popular
@@ -167,7 +180,7 @@ export default function Pricing() {
                     >
                       {plan.cta}
                     </button>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -176,7 +189,9 @@ export default function Pricing() {
 
         <div className="mt-20">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold tracking-tight">
+              Frequently Asked Questions
+            </h2>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:gap-12">
@@ -193,11 +208,13 @@ export default function Pricing() {
               },
               {
                 question: "Do you offer annual billing?",
-                answer: "Yes, we offer annual billing with a 10% discount compared to monthly billing.",
+                answer:
+                  "Yes, we offer annual billing with a 10% discount compared to monthly billing.",
               },
               {
                 question: "What payment methods do you accept?",
-                answer: "We accept all major credit cards, PayPal, and bank transfers for annual plans.",
+                answer:
+                  "We accept all major credit cards, PayPal, and bank transfers for annual plans.",
               },
               {
                 question: "Can I cancel my subscription?",
@@ -219,17 +236,20 @@ export default function Pricing() {
         </div>
 
         <div className="mt-20 text-center">
-          <h2 className="text-2xl font-bold mb-4">Ready to Go on a Ticketing Safari?</h2>
+          <h2 className="text-2xl font-bold mb-4">
+            Ready to Go on a Ticketing Safari?
+          </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-            Contact our sales team to discuss your specific requirements and get a tailored quote.
+            Contact our sales team to discuss your specific requirements and get
+            a tailored quote.
           </p>
-          <Link href="/contact">
+          <a href="/contact">
             <button className="px-6 py-3 text-gray-700 dark:text-gray-200 bg-white/70 dark:bg-gray-800/70 hover:bg-white dark:hover:bg-gray-700 border border-gray-300 dark:border-gray-700 rounded-md font-medium transition-colors">
               Contact Sales
             </button>
-          </Link>
+          </a>
         </div>
       </div>
     </div>
-  )
+  );
 }

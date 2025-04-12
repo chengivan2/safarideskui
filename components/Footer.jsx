@@ -1,5 +1,4 @@
-import Link from "next/link"
-import Image from "next/image"
+import { FaLinkedin, FaSquareXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -7,44 +6,45 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12 md:px-6">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="flex flex-col gap-2">
-            <Link href="/" className="flex items-center gap-2">
-              <Image
+            <a href="/" className="flex items-center gap-2">
+              <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-flPCkOIXvJVd6Dy0EV2pRYx4goKdmY.png"
                 alt="SafariDesk Logo"
                 width={150}
                 height={40}
               />
-            </Link>
+            </a>
             <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
-              Seamless Support, Smarter Solutions for your customer service needs.
+              Seamless Support, Smarter Solutions for your customer service
+              needs.
             </p>
           </div>
           <div>
             <h3 className="text-lg font-medium mb-4">Product</h3>
             <ul className="space-y-2">
               <li>
-                <Link
+                <a
                   href="/features"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
                 >
                   Features
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="/pricing"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
                 >
                   Pricing
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="/integrations"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
                 >
                   Integrations
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -52,28 +52,28 @@ export default function Footer() {
             <h3 className="text-lg font-medium mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <Link
+                <a
                   href="/blog"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
                 >
                   Blog
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="/documentation"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
                 >
                   Documentation
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="/help"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
                 >
                   Help Center
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -81,28 +81,28 @@ export default function Footer() {
             <h3 className="text-lg font-medium mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link
+                <a
                   href="/about"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
                 >
                   About Us
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="/contact"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
                 >
                   Contact
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="/careers"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
                 >
                   Careers
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -112,27 +112,27 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} SafariDesk. All rights reserved.
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <Link
-              href="/terms"
-              className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
+            <a
+              href="https://www.linkedin.com/company/safaridesk-ticketing/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors"
+              title="SafariDesk on LinkedIn"
             >
-              Terms
-            </Link>
-            <Link
-              href="/privacy"
-              className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
+              <FaLinkedin size={20} />
+            </a>
+            <a
+              href="https://x.com/ticketing_sd?s=21&t=uSyZfTP9_xXnl9jl27mQLQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400 transition-colors"
+              title="SafariDesk on X"
             >
-              Privacy
-            </Link>
-            <Link
-              href="/cookies"
-              className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
-            >
-              Cookies
-            </Link>
+              <FaSquareXTwitter size={20} />
+            </a>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
