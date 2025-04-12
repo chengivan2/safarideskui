@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FiUser, FiMail, FiGlobe } from "react-icons/fi";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function SignUp() {
   const [firstName, setFirstName] = useState("");
@@ -184,10 +185,10 @@ export default function SignUp() {
 
             {/* Submit Button with Text */}
             <div className="flex justify-end items-center gap-4">
-              <span className="pr-2 text-lg font-medium text-[#F97316] flex items-center gap-2"
+              <span className="text-lg lg:text-xl font-medium text-[#F97316] flex items-center gap-2"
               style={{ fontFamily: "var(--font-shadows-into-light)" }}>
                 Your new journey begins here {" "}
-                <span className="animate-bounceArrow">→</span>
+                <span><FaArrowRightLong /></span>
               </span>
               <button
                 type="submit"
