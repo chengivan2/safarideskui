@@ -4,7 +4,7 @@ This project is made in NextJS.
 You know the drill:
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-repo/safaridesk-ui.git
+    https://github.com/chengivan2/safarideskui.git
     ```
 
 2. Navigate to the project directory:
