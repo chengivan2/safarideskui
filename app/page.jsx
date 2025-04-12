@@ -1,13 +1,8 @@
 "use client";
 
-import { useState } from "react";
-
 import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
-  
-  
-
   return (
     <div className="relative">
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -78,29 +73,7 @@ export default function Home() {
           <div className="relative w-full max-w-3xl mx-auto rounded-xl overflow-hidden shadow-2xl">
             <div className="relative rounded-xl overflow-hidden bg-white/30 dark:bg-gray-800/30 backdrop-blur-lg border border-white/50 dark:border-gray-700/50">
               <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2">
-                    <div className="h-3 w-3 rounded-full bg-red-500"></div>
-                    <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-                    <div className="h-3 w-3 rounded-full bg-green-500"></div>
-                  </div>
-                  <div className="text-sm font-medium">
-                    SafariDesk Dashboard
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="h-8 bg-green-100 dark:bg-green-900/20 rounded-md w-3/4"></div>
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="h-24 bg-green-100 dark:bg-green-900/20 rounded-md"></div>
-                    <div className="h-24 bg-green-100 dark:bg-green-900/20 rounded-md"></div>
-                    <div className="h-24 bg-green-100 dark:bg-green-900/20 rounded-md"></div>
-                  </div>
-                  <div className="h-32 bg-green-100 dark:bg-green-900/20 rounded-md"></div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="h-16 bg-green-100 dark:bg-green-900/20 rounded-md"></div>
-                    <div className="h-16 bg-green-100 dark:bg-green-900/20 rounded-md"></div>
-                  </div>
-                </div>
+                <img className="rounded-md" src="/safari-desk-sign-up-page.jpg" alt="SafariDesk sign up page" />
               </div>
             </div>
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white/80 dark:via-black/50 dark:to-black/80 pointer-events-none"></div>
