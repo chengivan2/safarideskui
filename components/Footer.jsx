@@ -38,27 +38,11 @@ export default function Footer() {
                   Pricing
                 </a>
               </li>
-              <li>
-                <a
-                  href="/integrations"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
-                >
-                  Integrations
-                </a>
-              </li>
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-medium mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li>
-                <a
-                  href="/blog"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
-                >
-                  Blog
-                </a>
-              </li>
               <li>
                 <a
                   href="/documentation"
@@ -69,7 +53,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/help"
+                  href="/signup"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
                 >
                   Help Center
@@ -88,36 +72,13 @@ export default function Footer() {
                   About Us
                 </a>
               </li>
-              <li>
-                <a
-                  href="/contact"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
-                >
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/careers"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
-                >
-                  Careers
-                </a>
-              </li>
+
               <li>
                 <a
                   href="/terms"
                   className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
                 >
                   Terms & Conditions
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/privacy"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 dark:hover:text-green-400"
-                >
-                  Privacy Policy
                 </a>
               </li>
             </ul>

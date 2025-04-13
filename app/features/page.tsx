@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function page() {
+export default function FeaturePage() {
   return (
     <>
       {/* Features Section */}
@@ -16,7 +16,7 @@ export default function page() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="py-2 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 icon: (
@@ -125,7 +125,7 @@ export default function page() {
       {/* Testimonials */}
       <section className="px-4 py-20">
         <div className="container mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-[2rem]">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Trusted by Support Teams Worldwide
             </h2>
@@ -134,7 +134,7 @@ export default function page() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="py-2 grid gap-8 md:grid-cols-3">
             {[
               {
                 quote:
