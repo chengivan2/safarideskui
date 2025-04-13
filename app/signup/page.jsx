@@ -132,7 +132,7 @@ export default function SignUp() {
                 <BsBriefcaseFill className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-500" />
                 <input
                   id="companyName"
-                  placeholder="Acme Inc."
+                  placeholder="SafariDesk Inc."
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
                   required
