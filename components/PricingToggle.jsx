@@ -32,7 +32,7 @@ export default function PricingToggle({ onToggle }) {
         <span className={`text-base font-medium ${isYearly ? "text-green-500" : "text-gray-600 dark:text-gray-400"}`}>
           Yearly
         </span>
-        <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 text-xs font-medium px-2 py-1 rounded-full">
+        <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 text-md font-medium px-2 py-1 rounded-full">
           Save 33%
         </span>
       </div>
