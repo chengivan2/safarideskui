@@ -33,7 +33,7 @@ export default function PricingToggle({ onToggle }) {
           Yearly
         </span>
         <span className="bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 text-xs font-medium px-2 py-1 rounded-full">
-          Save 10%
+          Save 33%
         </span>
       </div>
     </div>
