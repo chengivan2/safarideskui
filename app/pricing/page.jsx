@@ -76,7 +76,7 @@ export default function Pricing() {
                 </div>
               )}
               <p className="mt-4 text-gray-600 dark:text-gray-400">
-                Ideal for customer support, IT helpdesks, and internal service desks.
+                <i>2 Agents for free for life</i>
               </p>
               <ul className="mt-6 space-y-3 flex-grow text-gray-700 dark:text-gray-200">
                 <li>Ticket creation and management via email</li>
