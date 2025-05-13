@@ -54,7 +54,8 @@ export default function Pricing() {
             SafariDesk Ticketing System - Pricing & Features
           </h1>
           <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">
-            All users receive full access to features, no hidden tiers. Designed for ease of use, fast setup, and scalability.
+            All users receive full access to features, no hidden tiers. Designed
+            for ease of use, fast setup, and scalability.
           </p>
         </div>
 
@@ -107,14 +108,6 @@ export default function Pricing() {
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="mt-12 max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4">Additional Information</h2>
-          <ul className="text-gray-600 dark:text-gray-400 space-y-2">
-            <li>All users receive full access to features, no hidden tiers.</li>
-            <li>Designed for ease of use, fast setup, and scalability.</li>
-          </ul>
         </div>
 
         <div className="mt-20 text-center">
