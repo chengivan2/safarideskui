@@ -7,52 +7,6 @@ import PricingToggle from "@/components/PricingToggle";
 export default function Pricing() {
   const [isYearly, setIsYearly] = useState(false);
 
-  const basePlans = [
-    {
-      name: "Basic",
-      monthlyPrice: "$10",
-      yearlyPrice: "$100",
-      priceUnit: "per agent",
-      description:
-        "Perfect for small teams just getting started with customer support.",
-      features: ["3 max domains", "5 max agents", "Unlimited storage"],
-      cta: "Start Your Safari",
-      popular: false,
-    },
-    {
-      name: "Standard",
-      monthlyPrice: "$15",
-      yearlyPrice: "$150",
-      priceUnit: "per agent",
-      description: "Ideal for growing teams with moderate support volume.",
-      features: [
-        "6 max domains",
-        "10 max agents",
-        "Unlimited storage",
-        "All the core features",
-        "Mobile version",
-      ],
-      cta: "Start Your Safari",
-      popular: true,
-    },
-    {
-      name: "Enterprise",
-      monthlyPrice: "$25",
-      yearlyPrice: "$265",
-      priceUnit: "per agent",
-      description: "For large organizations with complex support requirements.",
-      features: [
-        "10 max domains",
-        "Unlimited agents",
-        "Unlimited storage",
-        "Expedited support",
-        "Mobile version",
-      ],
-      cta: "Contact Sales",
-      popular: false,
-    },
-  ];
-
   return (
     <div className="relative">
       {/* Background SVG patterns */}
@@ -95,144 +49,64 @@ export default function Pricing() {
       <div className="container mx-auto px-4 py-20">
         <div className="text-center max-w-3xl mx-auto mb-8">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Simple, Transparent Pricing
+            SafariDesk Ticketing System - Pricing & Features
           </h1>
           <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">
-            Choose the plan that's right for your team. All plans include a
-            14-day free trial.
+            SafariDesk offers a simple and affordable pricing model designed to meet the needs of small to medium-sized teams.
           </p>
         </div>
 
-        <PricingToggle onToggle={setIsYearly} discountPercentage={10} />
+        <PricingToggle onToggle={setIsYearly} discountPercentage={33} />
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {basePlans.map((plan, index) => (
-            <div
-              key={index}
-              className={`relative rounded-xl overflow-hidden ${
-                plan.popular
-                  ? "bg-white/40 dark:bg-gray-800/40 border-green-500 shadow-lg shadow-green-500/10"
-                  : "bg-white/30 dark:bg-gray-800/30 border-white/50 dark:border-gray-700/50 shadow-sm"
-              } backdrop-blur-xl border-2 hover:shadow-xl transition-all duration-300 group`}
-            >
-              {plan.popular && (
-                <div className="absolute top-0 right-0 bg-green-500 text-white px-4 py-1 text-sm font-medium">
-                  Most Popular
-                </div>
-              )}
+        <div className="max-w-xl mx-auto">
+          <div className="relative rounded-xl overflow-hidden border-green-500 shadow-lg shadow-green-500/10 border-2 hover:shadow-xl transition-all duration-300 group bg-gradient-to-br from-green-100/60 via-white/40 to-green-200/60 dark:from-gray-800/60 dark:via-gray-900/40 dark:to-green-900/60 backdrop-blur-xl backdrop-saturate-150">
+            <div className="p-8 relative z-10 h-full flex flex-col">
+              <h3 className="text-2xl font-bold mb-2">Basic</h3>
+              <div className="mt-2 flex items-baseline gap-4">
+                <span className="text-3xl font-extrabold text-green-600 dark:text-green-400">
+                  {isYearly ? "$120" : "$15"}
+                </span>
+                <span className="text-lg text-gray-600 dark:text-gray-400">
+                  per agent / {isYearly ? "year" : "month"}
+                </span>
+              </div>
               {isYearly && (
-                <div className="absolute top-0 left-0 bg-green-500 text-white px-4 py-1 text-sm font-medium">
-                  Save 10%
+                <div className="mt-1 text-green-600 dark:text-green-400 text-base font-semibold">
+                  Save 33% with annual billing
                 </div>
               )}
-              <div className="p-8 relative z-10 h-full flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/20 dark:from-gray-800/5 dark:to-gray-800/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <h3 className="text-2xl font-bold">{plan.name}</h3>
-                <div className="mt-4 flex items-baseline">
-                  <span className="text-4xl font-extrabold">
-                    {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
-                  </span>
-                  <span className="ml-1 text-xl text-gray-600 dark:text-gray-400">
-                    {plan.priceUnit}/{isYearly ? "year" : "month"}
-                  </span>
-                </div>
-                {isYearly && plan.name !== "Enterprise" && (
-                  <div className="mt-2 text-sm text-green-600 dark:text-green-400">
-                    Save $
-                    {Number.parseInt(plan.monthlyPrice.substring(1)) * 12 -
-                      Number.parseInt(plan.yearlyPrice.substring(1))}{" "}
-                    per agent annually
-                  </div>
-                )}
-                <p className="mt-4 text-gray-600 dark:text-gray-400">
-                  {plan.description}
-                </p>
-                <ul className="mt-6 space-y-3 flex-grow">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="text-green-500 mr-2 flex-shrink-0 mt-0.5"
-                      >
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                      </svg>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8">
-                  <a href={plan.name === "Enterprise" ? "/contact" : "/signup"}>
-                    <button
-                      className={`cursor-pointer w-full px-6 py-3 rounded-md font-medium transition-colors ${
-                        plan.popular
-                          ? "bg-green-500 hover:bg-green-600 text-white"
-                          : "bg-white/70 dark:bg-gray-800/70 hover:bg-white dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-700"
-                      }`}
-                    >
-                      {plan.cta}
-                    </button>
-                  </a>
-                </div>
+              <p className="mt-4 text-gray-600 dark:text-gray-400">
+                Ideal for customer support, IT helpdesks, and internal service desks.
+              </p>
+              <ul className="mt-6 space-y-3 flex-grow text-gray-700 dark:text-gray-200">
+                <li>Ticket creation and management via email</li>
+                <li>SLA management with response time tracking</li>
+                <li>Internal notes and team collaboration tools</li>
+                <li>Basic reporting and analytics dashboard</li>
+                <li>One knowledge base (FAQ/Help Center)</li>
+                <li>Automation rules (up to 5)</li>
+                <li>File attachments and media support</li>
+                <li>Role-based access and permissions</li>
+                <li>Email notifications and alerts</li>
+                <li>Community support access</li>
+              </ul>
+              <div className="mt-8">
+                <a href="/signup">
+                  <button className="cursor-pointer w-full px-6 py-3 rounded-md font-medium bg-green-500 hover:bg-green-600 text-white transition-colors">
+                    Start Your Safari
+                  </button>
+                </a>
               </div>
             </div>
-          ))}
+          </div>
         </div>
 
-        <div className="mt-20">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold tracking-tight">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:gap-12">
-            {[
-              {
-                question: "Can I switch plans later?",
-                answer:
-                  "Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.",
-              },
-              {
-                question: "Is there a setup fee?",
-                answer:
-                  "No, there are no setup fees for any of our plans. You only pay the monthly or annual subscription fee.",
-              },
-              {
-                question: "Do you offer annual billing?",
-                answer:
-                  "Yes, we offer annual billing with a 10% discount compared to monthly billing.",
-              },
-              {
-                question: "What payment methods do you accept?",
-                answer:
-                  "We accept all major credit cards, PayPal, and bank transfers for annual plans.",
-              },
-              {
-                question: "Can I cancel my subscription?",
-                answer:
-                  "Yes, you can cancel your subscription at any time. There are no long-term contracts or cancellation fees.",
-              },
-              {
-                question: "Do you offer a free trial?",
-                answer:
-                  "Yes, all plans come with a 14-day free trial. No credit card required to start your safari with us.",
-              },
-            ].map((faq, index) => (
-              <div key={index} className="space-y-2">
-                <h3 className="text-xl font-medium">{faq.question}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
+        <div className="mt-12 max-w-2xl mx-auto text-center">
+          <h2 className="text-2xl font-bold mb-4">Additional Information</h2>
+          <ul className="text-gray-600 dark:text-gray-400 space-y-2">
+            <li>All users receive full access to features, no hidden tiers.</li>
+            <li>Designed for ease of use, fast setup, and scalability.</li>
+          </ul>
         </div>
 
         <div className="mt-20 text-center">
@@ -240,8 +114,7 @@ export default function Pricing() {
             Ready to Go on a Ticketing Safari?
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-            Contact our sales team to discuss your specific requirements and get
-            a tailored quote.
+            Contact our sales team to discuss your specific requirements and get a tailored quote.
           </p>
           <a href="/contact">
             <button className="px-6 py-3 text-gray-700 dark:text-gray-200 bg-white/70 dark:bg-gray-800/70 hover:bg-white dark:hover:bg-gray-700 border border-gray-300 dark:border-gray-700 rounded-md font-medium transition-colors">
