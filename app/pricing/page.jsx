@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { PiCheckCircle, PiSealCheckFill } from "react-icons/pi";
 import Link from "next/link";
 import PricingToggle from "@/components/PricingToggle";
+import { FaCheck } from "react-icons/fa6";
 
 export default function Pricing() {
   const [isYearly, setIsYearly] = useState(false);
@@ -52,7 +54,8 @@ export default function Pricing() {
             SafariDesk Ticketing System - Pricing & Features
           </h1>
           <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">
-            SafariDesk offers a simple and affordable pricing model designed to meet the needs of small to medium-sized teams.
+            SafariDesk offers a simple and affordable pricing model designed to
+            meet the needs of small to medium-sized teams.
           </p>
         </div>
 
@@ -75,8 +78,14 @@ export default function Pricing() {
                   Save 33% with annual billing
                 </div>
               )}
-              <p className="mt-4 text-gray-600 dark:text-gray-400">
-                <i>2 Agents for free for life</i>
+              <p className="mt-4 font-bold bg-gradient-to-r from-green-500 via-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                <span>
+                  <PiSealCheckFill
+                    size={24}
+                    className="inline-block mr-2 text-green-500"
+                  />
+                  2 Agents for free for life
+                </span>
               </p>
               <ul className="mt-6 space-y-3 flex-grow text-gray-700 dark:text-gray-200">
                 <li>Ticket creation and management via email</li>
@@ -114,7 +123,8 @@ export default function Pricing() {
             Ready to Go on a Ticketing Safari?
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
-            Contact our sales team to discuss your specific requirements and get a tailored quote.
+            Contact our sales team to discuss your specific requirements and get
+            a tailored quote.
           </p>
           <a href="/contact">
             <button className="px-6 py-3 text-gray-700 dark:text-gray-200 bg-white/70 dark:bg-gray-800/70 hover:bg-white dark:hover:bg-gray-700 border border-gray-300 dark:border-gray-700 rounded-md font-medium transition-colors">
