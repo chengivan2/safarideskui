@@ -54,8 +54,7 @@ export default function Pricing() {
             SafariDesk Ticketing System - Pricing & Features
           </h1>
           <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">
-            SafariDesk offers a simple and affordable pricing model designed to
-            meet the needs of small to medium-sized teams.
+            All users receive full access to features, no hidden tiers. Designed for ease of use, fast setup, and scalability.
           </p>
         </div>
 
