@@ -84,7 +84,7 @@ export default function Pricing() {
                     size={24}
                     className="inline-block mr-2 text-green-500"
                   />
-                  2 Agents for free for life
+                  2 Agents for free
                 </span>
               </p>
               <ul className="mt-6 space-y-3 flex-grow text-gray-700 dark:text-gray-200">
