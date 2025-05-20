@@ -46,13 +46,19 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <a href="/" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-1">
           <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-flPCkOIXvJVd6Dy0EV2pRYx4goKdmY.png"
+            src="/safaridesk-logo-no-bg.png"
             alt="SafariDesk Logo"
-            width={150}
-            height={40}
+            width={75}
+            height={20}
           />
+          <span
+            className="h-10 flex items-center text-2xl font-bold bg-gradient-to-br from-green-500 via-lime-400 to-orange-400 bg-clip-text text-transparent select-none"
+            style={{ lineHeight: "2.5rem" }}
+          >
+            SafariDesk
+          </span>
         </a>
 
         {/* Desktop Navigation */}

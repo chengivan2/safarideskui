@@ -66,7 +66,7 @@ export default function Home() {
               wrapper="span"
               speed={50}
               repeat={Infinity}
-              className="text-green-500 font-semibold"
+              className="text-green-500 font-semibold shimmer-text"
             />
           </p>
 
